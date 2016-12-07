@@ -39,7 +39,8 @@ export default {
               this.hasResults['is-success'] = true;
               this.hasResults['is-danger'] = false;
               this.resultIcon = 'fa-check';
-              this.resultMessage = 'This is a Palindrome';
+              this.resultMessage = `"${this.palindrome}" is a Palindrome`;
+              this.palindrome = '';
               this.resultMessageClass = 'is-success';
 
               // console.log(JSON.stringify(response));
@@ -49,7 +50,8 @@ export default {
               this.hasResults['is-success'] = false;
               this.hasResults['is-danger'] = true;
               this.resultIcon = 'fa-warning';
-              this.resultMessage = 'This is NOT a Palindrome';
+              this.resultMessage = `"${this.palindrome}" is NOT a Palindrome`;
+              this.palindrome = '';
               this.resultMessageClass = 'is-danger';
 
               // error callback
