@@ -1,8 +1,12 @@
 # Start API server
 
-cd api/ && node api.js
+	cd api/
+	npm install
+	node api.js
 
 
 # Start frontend (in dev mode)
 
-cd frontend/ && npm run dev
+	cd frontend/
+	npm install
+	npm run dev
