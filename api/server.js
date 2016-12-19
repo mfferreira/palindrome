@@ -2,13 +2,13 @@
 * @Author: Marco Ferreira
 * @Date:   2016-12-19 17:47:50
 * @Last Modified by:   Marco Ferreira
-* @Last Modified time: 2016-12-19 18:30:39
+* @Last Modified time: 2016-12-19 18:36:42
 */
 
 'use strict';
 
 var express = require('express'),
-	_ = require('lodash');
+	utils 	= require('./utils');
 
 function startService() {
 	// cache
@@ -28,10 +28,9 @@ function startService() {
 	})
 
 	app.get('/:palindrome', function(req, res) {
-		// console.log(JSON.stringify(req.params));
 
-		var str = req.params.palindrome.replace(/[^a-zA-Z]*/ig, '');
-		var strReversed = _.reverse(str.split('')).join('');
+		var str = utils.getAlphabeticChars(req.params.palindrome);
+		var strReversed = utils.reverseString(str);
 
 		if (str === strReversed) {
 			// console.log(200, JSON.stringify(req.params));
