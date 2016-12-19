@@ -4,6 +4,10 @@
 	npm install
 	node api.js
 
+#### run tests
+
+	npm run test
+
 
 # Start frontend (in dev mode)
 
