@@ -2,7 +2,7 @@
 * @Author: Marco Ferreira
 * @Date:   2016-12-19 17:45:31
 * @Last Modified by:   Marco Ferreira
-* @Last Modified time: 2016-12-19 18:22:25
+* @Last Modified time: 2016-12-19 18:30:25
 */
 
 'use strict';
@@ -51,6 +51,62 @@ describe('loading express', function () {
       .get('/a man a plan a canal panama')
       .expect(200)
       .expect("a man a plan a canal panama", done);
+  });
+
+  it('200 - IS A PALINDROME', function testSlash(done) {
+    console.log('GET /aa')
+    request(server)
+      .get('/a man a plan a canal panama')
+      .expect(200)
+      .expect("a man a plan a canal panama", done);
+  });
+
+  it('200 - IS A PALINDROME', function testSlash(done) {
+    console.log('GET /aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+    request(server)
+      .get('/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+      .expect(200)
+      .expect("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", done);
+  });
+
+  it('200 - IS A PALINDROME', function testSlash(done) {
+    console.log('GET /aaabb010bbaaa')
+    request(server)
+      .get('/aaabb010bbaaa')
+      .expect(200)
+      .expect("aaabb010bbaaa", done);
+  });
+
+  it('200 - IS A PALINDROME', function testSlash(done) {
+    console.log('GET /1234567890')
+    request(server)
+      .get('/1234567890')
+      .expect(200)
+      .expect("1234567890", done);
+  });
+
+  it('400 - IS NOT A PALINDROME', function testSlash(done) {
+    console.log('GET /aaabbb')
+    request(server)
+      .get('/aaabbb')
+      .expect(400)
+      .expect("aaabbb", done);
+  });
+
+  it('400 - IS NOT A PALINDROME', function testSlash(done) {
+    console.log('GET /qwerty')
+    request(server)
+      .get('/qwerty')
+      .expect(400)
+      .expect("qwerty", done);
+  });
+
+  it('400 - IS NOT A PALINDROME', function testSlash(done) {
+    console.log('GET /a1234567890z')
+    request(server)
+      .get('/a1234567890z')
+      .expect(400)
+      .expect("a1234567890z", done);
   });
 
   it('404 everything else', function testPath(done) {

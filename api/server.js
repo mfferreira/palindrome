@@ -2,7 +2,7 @@
 * @Author: Marco Ferreira
 * @Date:   2016-12-19 17:47:50
 * @Last Modified by:   Marco Ferreira
-* @Last Modified time: 2016-12-19 18:20:13
+* @Last Modified time: 2016-12-19 18:30:39
 */
 
 'use strict';
@@ -33,10 +33,14 @@ function startService() {
 		var str = req.params.palindrome.replace(/[^a-zA-Z]*/ig, '');
 		var strReversed = _.reverse(str.split('')).join('');
 
-		if (str === strReversed)
-			res.status(200).send(req.params.palindrome)
-		else
-			res.status(400).send(req.params.palindrome)
+		if (str === strReversed) {
+			// console.log(200, JSON.stringify(req.params));
+			res.status(200).send(req.params.palindrome);
+		}
+		else {
+			// console.log(200, JSON.stringify(req.params));
+			res.status(400).send(req.params.palindrome);
+		}
 
 	});
 
